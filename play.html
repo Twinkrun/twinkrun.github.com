@@ -1,56 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<meta charset="utf-8">
-	<title>play Twinkrun</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-</head>
-<body>
-	<div >
-		<canvas id="display" style="background: #262629;" onClick="changeColor();"></canvas>
-	</div>
-	<script type="text/javascript">
-		var bStart = false;
-//画面サイズの取得
-//ウィンドウサイズの取得
-//getWindowSize();
-
-//画面サイズを取得する
-function setCanvasSize() {
-	var w = window.innerWidth;
-	var h = window.innerHeight;
-	$("#display").attr("width", w*1.5);
-	$("#display").attr("height", h*1.5);
-}
-setCanvasSize();	
-
-if(bStart){
-
-	changeColor();
-}
-function changeColor(){
-	var rnd = parseInt(Math.random()*3);
-	console.log("rnd: ", rnd);
-	if (rnd == 0) {
-		$("#display").css("background", "#00D4C7");
-	}
-	else if (rnd == 1) {
-		$("#display").css("background", "#F0392C");
-	}
-	else if (rnd == 2) {
-		$("#display").css("background", "#262629");
-	}
-
-	setTimeout("changeColor()", 3000);
-}
-
-$("body").onclick = function(){
-	r
-	console.log("pressed");
-	bStart = !bStart;
-}
-
-</script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Twinkrun</title>
+        <script src='./javascripts/play.js'></script>
+    </head>
 </html>
