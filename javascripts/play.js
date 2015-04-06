@@ -62,7 +62,7 @@
             state = GAME_STATE.PLAY;
             document.documentElement.innerHTML = '';
             changeRole(0);
-            setTimeout(endGame, GAME_TIME * 1000);
+            timerIDs.push(setTimeout(endGame, GAME_TIME * 1000));
         }
     }
 
