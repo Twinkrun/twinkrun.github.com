@@ -19,7 +19,7 @@
     var timerIDs = [];
     var colorTable = [];
 
-    document.addEventListener('DOMContentLoaded', function(event) {
+    document.addEventListener('DOMContentLoaded', function (event) {
         setBackground(TCOLOR.BLACK.color);
         document.documentElement.style.color = 'rgba(255, 255, 255, 0.8)';
         document.documentElement.style.fontSize = '500%';
@@ -33,8 +33,11 @@
         });
     });
 
-    window.onclick = function() {
-        colorTable.sort(function() { return Math.random() - 0.5 });
+    window.onclick = init;
+    window.ontouchstart = init;
+
+    function init() {
+        colorTable.sort(function () { return Math.random() - 0.5 });
 
         if (state == GAME_STATE.IDLE) {
             count = 5;
@@ -65,7 +68,6 @@
 
     function changeRole(count) {
         setBackground(colorTable[count]);
-        console.log(GAME_TIME / colorTable.length * 1000);
         timerIDs.push(setTimeout(function () { 
                 changeRole(count + 1);
             }, GAME_TIME / colorTable.length * 1000)
